@@ -6,7 +6,7 @@ const openai = new OpenAI({
 
 
 const runPrompt = async () => { 
-    const prompt = "give me a short prompt for an image that my penplotter will draw";
+    const prompt = "give me a very short and very simple prompt for a very simple logo that my penplotter will draw";
     const textResponse = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [
@@ -20,7 +20,7 @@ const runPrompt = async () => {
     });
 
     //console.log(textResponse['choices'][0]['message']['content']);
-    generatedPrompt = textResponse['choices'][0]['message']['content']
+    generatedPrompt = textResponse['choices'][0]['message']['content'] + "in monochrome geometric shapes with white background"
     console.log(generatedPrompt)
 
 
